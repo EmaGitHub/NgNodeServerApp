@@ -3,9 +3,9 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
   animations: [
     trigger('displayLoginForm', [
       state('false', style({
@@ -33,7 +33,7 @@ import { Router } from '@angular/router';
     ]),
   ]
 })
-export class AppComponent {
+export class LoginComponent {
 
   title = 'Angular Server App';
   showLoginForm = 'false';
@@ -42,8 +42,6 @@ export class AppComponent {
   password: string= '';
 
   constructor(private router: Router){
-
-    router.navigate(['/login']);
   }
 
   showHideLoginForm(){
@@ -53,7 +51,8 @@ export class AppComponent {
 
   submit(){
 
-    console.log("Submit ",this.name," - ",this.password);
-    this.router.navigate(['/root', {}]);
+    console.log("Submit ",this.name," - ",this.password," must Be 'admin-admin'");
+    if(this.name == "admin" && this.password == "admin") this.router.navigate(['/root', {}]);
+    else alert("Login failed");
   }
 }

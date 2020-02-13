@@ -1,17 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RootComponent } from './root.component';
+import { LoginComponent } from './login.component';
 
 @NgModule({
   declarations: [
-    RootComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [],
-  bootstrap: [RootComponent]
+  bootstrap: [LoginComponent]
 })
-export class RootModule { }
+export class LoginModule { }
