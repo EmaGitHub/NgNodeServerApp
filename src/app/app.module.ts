@@ -7,6 +7,8 @@ import { RootModule } from './root/root.module'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { MatSidenavModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +18,8 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     LoginModule,
-    RootModule
+    RootModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

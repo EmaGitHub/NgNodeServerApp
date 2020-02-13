@@ -1,5 +1,4 @@
-
-  .toolbar {
+.toolbar {
     height: 60px;
     display: flex;
     align-items: center;
@@ -9,8 +8,42 @@
     position: absolute;
     top: 0;
     width: 100%;
+    text-align: center;
+
+    .menu-icon{
+      position: absolute;
+
+      .glyphicon{
+
+        left: 20px;
+        font-size: 24px;
+      }
+    }
+
+    span{
+      margin: auto ;
+    }
   }
 
-  .toolbar img {
-    margin: 0 16px;
-  }
+.mat-sidenav-content { transition: 0.3s all }
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.tp-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+.tp-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+  width:200px;   
+  padding-left: 20px;
+}

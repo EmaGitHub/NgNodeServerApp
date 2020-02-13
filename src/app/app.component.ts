@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -35,13 +36,17 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
+  @ViewChild('sidenav') sidemenu: MatSidenav;
+
   title = 'Angular Server App';
   showLoginForm = 'false';
   
   name: string= '';
   password: string= '';
 
-  constructor(private router: Router){
+  opened: boolean = false;
+
+  constructor(public router: Router){
 
     router.navigate(['/login']);
   }
@@ -53,7 +58,23 @@ export class AppComponent {
 
   submit(){
 
-    console.log("Submit ",this.name," - ",this.password);
     this.router.navigate(['/root', {}]);
   }
+
+  openCloseMenu(){
+
+    if (this.opened) {
+      this.opened = false;
+    }
+    else {
+      this.opened = true;
+    } 
+  }
+
+  logout(){
+
+    this.opened = false;
+    this.router.navigate(['/login', {}])
+  }
+
 }

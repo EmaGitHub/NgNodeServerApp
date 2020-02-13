@@ -51,8 +51,7 @@ export class LoginComponent {
 
   submit(){
 
-    console.log("Submit ",this.name," - ",this.password," must Be 'admin-admin'");
-    if(this.name == "admin" && this.password == "admin") this.router.navigate(['/root', {}]);
+    if(this.name != "" && this.password != "") this.router.navigate(['/root', {}]);
     else alert("Login failed");
   }
 }
