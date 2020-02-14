@@ -16,7 +16,7 @@ app.get('*',function(req,res){
   //__dirname : It will resolve to your project folder.
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 app.set('port', port);
 
 const server = http.createServer(app);
