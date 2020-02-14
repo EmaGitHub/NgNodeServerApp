@@ -1,0 +1,8 @@
+<div class="confirm" [style.opacity]="visible ? '1' : '0'" [style.visibility]="visible ? 'visible' : 'hidden'">
+
+    <p class="text">{{text}}</p>
+
+    <button (click)="deny()" class="deny-button">NO</button>
+    <button (click)="accept()" class="confirm-button">OK</button>
+
+</div>

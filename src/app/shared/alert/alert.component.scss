@@ -1,0 +1,31 @@
+
+.alert{
+
+    position: absolute;
+    height: 140px;
+    width: 40vw;
+    color: white;
+    background-color: #cc3b3bd1;
+    border-radius: 20%;
+    border: 1px solid #b12525;
+    top: 30%;
+    left: 30%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    box-shadow: 0px 5px 30px;
+    text-align: center;
+
+    .text{
+
+        font-size: 20px;
+        margin: 10px;
+    }
+
+    .confirm-button{
+        
+        position: relative;
+        top: 3vh;
+        border: 1px black;
+        color: black;
+    }
+}  

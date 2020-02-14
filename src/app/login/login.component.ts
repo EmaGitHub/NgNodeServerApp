@@ -26,7 +26,7 @@ import { Router } from '@angular/router';
       })),
       state('true', style({
         
-        bottom: '0'
+        bottom: '60px'
       })),
       transition('false => true', animate('400ms')),
       transition('true => false', animate('800ms'))
@@ -41,6 +41,8 @@ export class LoginComponent {
   name: string= '';
   password: string= '';
 
+  logoutFailedVisible: boolean = false;
+
   constructor(private router: Router){
   }
 
@@ -49,9 +51,14 @@ export class LoginComponent {
     this.showLoginForm == 'false' ? this.showLoginForm = 'true' : this.showLoginForm = 'false';
   }
 
+  closeAlert(){
+
+    this.logoutFailedVisible = false;
+  }
+
   submit(){
 
     if(this.name != "" && this.password != "") this.router.navigate(['/root', {}]);
-    else alert("Login failed");
+    else this.logoutFailedVisible = true;
   }
 }

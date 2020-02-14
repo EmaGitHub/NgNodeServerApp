@@ -40,8 +40,9 @@ export class AppComponent {
   
   name: string= '';
   password: string= '';
-
   opened: boolean = false;
+
+  logoutConfirmVisible= false;
 
   constructor(public router: Router){
 
@@ -49,23 +50,30 @@ export class AppComponent {
   }
 
   showHideLoginForm(){
-
     this.showLoginForm == 'false' ? this.showLoginForm = 'true' : this.showLoginForm = 'false';
   }
 
   submit(){
-
     this.router.navigate(['/root', {}]);
   }
 
   openCloseMenu(){
-
     this.opened = !this.opened;
   }
 
-  logout(){
+  showConfirmAlert() {
 
     this.opened = false;
+    setTimeout(() => {
+      this.logoutConfirmVisible = true;
+    }, 300);
+  }
+
+  closeConfirmAlert(){
+    this.logoutConfirmVisible = false;
+  }
+
+  logout(){
     this.router.navigate(['/login', {}])
   }
 

@@ -1,0 +1,37 @@
+
+.confirm{
+
+    position: absolute;
+    height: 120px;
+    width: 40vw;
+    color: white;
+    background-color: #cc3b3bd1;
+    border-radius: 20%;
+    border: 1px solid #b12525;
+    top: 30%;
+    left: 30%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    box-shadow: 0px 5px 30px;
+    text-align: center;
+
+    .text{
+
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    .deny-button{
+
+        margin: 1vw;
+        border: 1px black;
+        color: black;
+    }
+
+    .confirm-button{
+        
+        margin: 1vw;
+        border: 1px black;
+        color: black;
+    }
+}  

@@ -1,7 +1,7 @@
 <mat-sidenav-container class="tp-container">
-  <mat-sidenav #sidenav mode="side" [opened]="opened">
+  <mat-sidenav #sidenav mode="cover" [opened]="opened" class="sidenav">
      <section class="tp-section">
-        <span (click)="logout()">Log Out</span>
+        <span (click)="showConfirmAlert()">Log Out</span>
      </section>
   </mat-sidenav>
 
@@ -15,8 +15,12 @@
       Ng SERVER App </span>
     </div>
 
+    <!-- Confirm toast -->
+    <confirm-component [text]="'Are you sure you want to logout?'" [visible]="logoutConfirmVisible" (closeConfirm)="closeConfirmAlert()" (confirmChoice)="logout()"></confirm-component>
+
     <!-- Content -->
     <router-outlet></router-outlet>
+
   </mat-sidenav-content>
 
 </mat-sidenav-container>

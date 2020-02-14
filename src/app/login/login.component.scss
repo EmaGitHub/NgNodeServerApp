@@ -94,7 +94,7 @@ h2 {
 
   .terminal {
     position: relative;
-    width: 80%;
+    width: 75% !important;
     border-radius: 6px;
     padding-top: 45px;
     margin-top: 8px;
@@ -138,14 +138,13 @@ h2 {
 
     opacity: 0;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
   }
 
   .form-control{
 
     border: 1px solid black;
     padding: 8px;
-    margin: 8px;
   }
 
 
