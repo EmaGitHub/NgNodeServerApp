@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
-import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -36,8 +35,6 @@ import { MatSidenav } from '@angular/material';
 })
 export class AppComponent {
 
-  @ViewChild('sidenav') sidemenu: MatSidenav;
-
   title = 'Angular Server App';
   showLoginForm = 'false';
   
@@ -63,12 +60,7 @@ export class AppComponent {
 
   openCloseMenu(){
 
-    if (this.opened) {
-      this.opened = false;
-    }
-    else {
-      this.opened = true;
-    } 
+    this.opened = !this.opened;
   }
 
   logout(){
