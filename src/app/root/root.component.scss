@@ -5,6 +5,12 @@
     padding-top: 60px;
     text-align: center;
 
+    .filmsButton{
+
+      border: 2px solid black;
+      margin: 20px;
+    }
+
     svg#rocket {
         width: 80px;
         position: absolute;
@@ -27,5 +33,11 @@
     left: -230px;
     z-index: -10;
     width: 1920px;
+  }
+
+  .error{
+    position: relative;
+    top: 20px;
+    color: red;
   }
 }

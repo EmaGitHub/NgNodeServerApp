@@ -9,6 +9,8 @@ import { RootModule } from './root/root.module'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientService } from './core/http-client.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,11 +22,12 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     MatSidenavModule,
     AppRoutingModule,
+    HttpClientModule,
     SharedModule,
     LoginModule,
     RootModule,
   ],
-  providers: [],
+  providers: [HttpClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
