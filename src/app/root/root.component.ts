@@ -100,7 +100,7 @@ export class RootComponent implements OnInit {
 
       this.httpClient.getRatingFromName(this.films[i].name).subscribe((resp) => {
 
-        this.films[i].vote = resp.Ratings[0].Value;
+        if(resp.Ratings && resp.Ratings.length != 0) this.films[i].vote = resp.Ratings[0].Value;
       },
         (err: any) => {
 

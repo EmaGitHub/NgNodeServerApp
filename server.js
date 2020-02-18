@@ -21,3 +21,24 @@ app.set('port', port);
 
 const server = http.createServer(app);
 server.listen(port, () => console.log('running on port '+port));
+
+/* 
+    MYSQL
+    create database testdb;
+*/
+
+const mysql = require('mysql');
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'testdb'
+});
+
+connection.connect(function(err) {
+    if (err) {
+      return console.error('error: ' + err.message);
+    }
+    console.log('Connected to the MySQL server.');
+  });
