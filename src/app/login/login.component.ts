@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
+import { ServerService } from '../core/server.service';
 
 @Component({
   selector: 'app-login',
@@ -33,7 +34,7 @@ import { Router } from '@angular/router';
     ]),
   ]
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
   title = 'Angular Server App';
   showLoginForm = 'false';
@@ -43,7 +44,16 @@ export class LoginComponent {
 
   logoutFailedVisible: boolean = false;
 
-  constructor(private router: Router){
+  constructor(private router: Router,
+              private server: ServerService){
+  }
+
+  ngOnInit(){
+
+    this.server.get().then((data: any) => {
+
+      console.log("DATA RECEIVED: ",data)
+    })
   }
 
   showHideLoginForm(){
