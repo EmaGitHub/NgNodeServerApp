@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientService } from './core/http-client.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DatabaseModule } from './database/database.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     LoginModule,
     RootModule,
+    DatabaseModule
   ],
   providers: [HttpClientService],
   bootstrap: [AppComponent]

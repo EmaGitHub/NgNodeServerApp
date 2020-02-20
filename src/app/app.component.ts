@@ -53,7 +53,13 @@ export class AppComponent {
     this.showLoginForm == 'false' ? this.showLoginForm = 'true' : this.showLoginForm = 'false';
   }
 
-  submit(){
+  openDatabasePage(){
+    this.opened = false;
+    this.router.navigate(['/database', {}]);
+  }
+
+  openRootPage(){
+    this.opened = false;
     this.router.navigate(['/root', {}]);
   }
 

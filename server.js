@@ -7,7 +7,7 @@ const path = require("path");
 
 /* 
     MYSQL
-    create database testdb;
+    create database testdb; use table testtable;
     user: user - password: password
 */
 
@@ -21,6 +21,17 @@ const connection = mysql.createConnection({
   database: "testdb"
 });
 
+
+//CONFIGURATION
+
+const app = express();
+    app.use(cors())
+    app.use(bodyParser.urlencoded({extended: true}))
+    app.use(bodyParser.json())
+    app.use(db(connection));
+
+//CONNECTION TO DB    
+
 connection.connect(function(err) {
   if (err) {
     return console.error("error: " + err.message);
@@ -28,12 +39,6 @@ connection.connect(function(err) {
   console.log("Connected to the MySQL server.");
 });
 
-//EXECUTION
-
-const app = express()
-    .use(cors())
-    .use(bodyParser.json())
-    .use(db(connection));
 
 // Declare static folder to be served. It contains the js, images, css, etc.
 app.use(express.static("dist/ngServerApp"));
@@ -41,7 +46,7 @@ app.use(express.static("dist/ngServerApp"));
 // Serve the index.html for all the other requests so that the
 // router in the javascript app can render the necessary components
 app.get("*", function(req, res) {
-  console.log("REQ ");
+  console.log("REQUEST from WEB ");
   res.sendFile(path.join(__dirname + "/dist/ngServerApp/index.html"));
   //__dirname : It will resolve to your project folder.
 });

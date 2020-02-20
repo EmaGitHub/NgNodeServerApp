@@ -1,5 +1,11 @@
 <mat-sidenav-container class="tp-container">
   <mat-sidenav #sidenav mode="cover" [opened]="opened" class="sidenav">
+    <section class="tp-section">
+      <span (click)="openRootPage()">Root page</span>
+   </section>
+    <section class="tp-section">
+      <span (click)="openDatabasePage()">Database page</span>
+   </section>
      <section class="tp-section">
         <span (click)="showConfirmAlert()">Log Out</span>
      </section>

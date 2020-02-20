@@ -44,16 +44,9 @@ export class LoginComponent implements OnInit{
 
   logoutFailedVisible: boolean = false;
 
-  constructor(private router: Router,
-              private server: ServerService){
-  }
+  constructor(private router: Router){  }
 
   ngOnInit(){
-
-    this.server.get().then((data: any) => {
-
-      console.log("DATA RECEIVED: ",data)
-    })
   }
 
   showHideLoginForm(){

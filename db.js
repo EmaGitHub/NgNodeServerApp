@@ -1,13 +1,20 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 
 function createRouter(db) {
-  const router = express.Router();
-  const owner = "";
 
-  router.post("/test", (req, res, next) => {
+  /* const app = express()
+    .use(bodyParser.json())
+    .use(bodyParser.urlencoded({
+      extended: true
+    })) */
+  const router = express.Router();
+
+  router.post("/add", (req, res, next) => {
+
     db.query(
-      "INSERT INTO testtable (id, name) VALUES (?,?)",
-      [id, req.body.name],
+      "INSERT INTO testtable (name) VALUES (?)",
+      [req.body.data],
       error => {
         if (error) {
           console.error(error);
@@ -34,6 +41,7 @@ function createRouter(db) {
   }); */
 
   router.get("/test", function(req, res, next) {
+
     db.query(
       "SELECT * FROM testtable",
       //[owner, 10*(req.params.page || 0)],
