@@ -26,10 +26,10 @@ function createRouter(db) {
     );
   });
 
-  /* router.delete("/event/:id", function(req, res, next) {
+  router.delete("/delete/:id", function(req, res, next) {
     db.query(
-      "DELETE FROM events WHERE id=? AND owner=?",
-      [req.params.id, owner],
+      "DELETE FROM testtable WHERE id=?",
+      [req.params.id],
       error => {
         if (error) {
           res.status(500).json({ status: "error" });
@@ -38,7 +38,7 @@ function createRouter(db) {
         }
       }
     );
-  }); */
+  });
 
   router.get("/test", function(req, res, next) {
 

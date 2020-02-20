@@ -11,10 +11,12 @@ export class DatabasePage implements OnInit{
 
   connected: boolean = false;
 
+  wrongIdVisible: boolean = false;
   tableVisible: boolean = false;
   databaseData: any;
 
   name: string = '';
+  id: number;
 
   constructor(private serverService: ServerService) {} 
 
@@ -29,9 +31,7 @@ export class DatabasePage implements OnInit{
   showRefreshData(){
 
     if(this.tableVisible == false) this.tableVisible = true;
-
     if(!this.connected) this.databaseData = [{id: 1, name: "Sample data"}, {id: 2, name: "Sample data 2"}];
-
     else this.serverService.get().then((data: any) => {
       this.databaseData = data;
     });
@@ -43,5 +43,19 @@ export class DatabasePage implements OnInit{
       this.serverService.create(this.name).then(() => {
       });
     }
+  }
+
+  delete(){
+
+      this.serverService.deleteElem(this.id).then(() => {
+      },
+      (err) => {
+        this.wrongIdVisible = true;
+      });
+  }
+
+  closeAlert(){
+
+    this.wrongIdVisible = false;
   }
 }

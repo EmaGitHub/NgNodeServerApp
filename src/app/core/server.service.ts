@@ -36,8 +36,9 @@ export class ServerService {
     }
    /*  updateEvent(event) {
       return this.request('PUT', `${environment.serverUrl}/test/${event.id}`, event);
-    }
-    deleteEvent(event) {
-      return this.request('DELETE', `${environment.serverUrl}/test/${event.id}`);
-    } */
+    }*/
+
+    deleteElem(id: number) {
+      return this.request('DELETE', environment.serverUrl+'/delete/'+id);
+    } 
 }

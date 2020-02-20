@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { NgModule } from '@angular/core';
 import { SharedModule } from './shared/shared.module';
@@ -22,6 +23,7 @@ import { DatabaseModule } from './database/database.module';
     BrowserModule,
     BrowserAnimationsModule,
     MatSidenavModule,
+    MatGridListModule,
     AppRoutingModule,
     HttpClientModule,
     SharedModule,

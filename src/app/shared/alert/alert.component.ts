@@ -15,7 +15,6 @@ export class AlertComponent {
     @Output() closeAlert: EventEmitter<any> = new EventEmitter();
 
     close(){
-
       this.closeAlert.emit();
     }
 
