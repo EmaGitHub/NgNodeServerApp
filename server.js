@@ -13,13 +13,33 @@ const path = require("path");
 
 const mysql = require("mysql");
 const db = require("./db");
-const dbNoSql = require("./noSqlDb")
+const noSqlDb = require("./noSqlDb")
 
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "password",
   database: "testdb"
+});
+
+
+
+
+//EXPRESS CONFIGURATION
+
+const app = express();
+    app.use(cors());
+    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(bodyParser.json());
+    app.use(db(connection));
+
+//CONNECTION TO SQL DB
+
+connection.connect(function(err) {                                    //MYSQL
+  if (err) {
+    return console.error("error: " + err.message);
+  }
+  console.log("Connected to the MySQL server.");
 });
 
 
@@ -30,23 +50,6 @@ const connection = mysql.createConnection({
 
 const MongoClient = require('mongodb').MongoClient;                     //MongoDB driver
 const url = 'mongodb://localhost/testdb';                               //DB Url to connect
-
-//EXPRESS CONFIGURATION
-
-const app = express();
-    app.use(cors())
-    app.use(bodyParser.urlencoded({extended: true}))
-    app.use(bodyParser.json())
-    app.use(db(connection));
-
-//CONNECTION TO DBs
-
-connection.connect(function(err) {                                    //MYSQL
-  if (err) {
-    return console.error("error: " + err.message);
-  }
-  console.log("Connected to the MySQL server.");
-});
 
 MongoClient.connect(url, {                                             //MONGODB
   useUnifiedTopology: true,
