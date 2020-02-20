@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RootComponent } from './root/root.component';
 import { LoginComponent } from './login/login.component';
 import { DatabasePage } from './database/databse.component';
+import { DatabaseNoSqlPage } from './database-nosql/database-nosql.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,9 @@ const routes: Routes = [
   },
   { path: 'database', 
     component: DatabasePage 
+  },
+  { path: 'databaseNoSql', 
+    component: DatabaseNoSqlPage 
   }
 ];
 

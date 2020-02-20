@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ServerService } from '../core/server.service';
 
 @Component({
-  selector: 'page-database',
-  templateUrl: './database.component.html',
-  styleUrls: ['./database.component.scss'],
+  selector: 'page-database-nosql',
+  templateUrl: './database-nosql.component.html',
+  styleUrls: ['./database-nosql.component.scss'],
   animations: [  ]
 })
-export class DatabasePage implements OnInit{
+export class DatabaseNoSqlPage implements OnInit{
 
   connected: boolean = false;
 
@@ -22,7 +22,7 @@ export class DatabasePage implements OnInit{
 
   ngOnInit(){
 
-    this.serverService.get().then((data: any) => {
+    this.serverService.getCollection().then((data: any) => {
       this.databaseData = data;
       this.connected = true;
     });
@@ -31,7 +31,7 @@ export class DatabasePage implements OnInit{
   showRefreshData(){
 
     if(this.tableVisible == false) this.tableVisible = true;
-    if(!this.connected) this.databaseData = [{id: 1, name: "Sample data"}, {id: 2, name: "Sample data 2"}];
+    if(!this.connected) this.databaseData = [{ "id" : 1, "name" : "first record" }, { "id" : 2, "name" : "second record" }, { "id" : 3, "name" : "third record" }];
     else this.serverService.get().then((data: any) => {
       this.databaseData = data;
     });
@@ -40,20 +40,17 @@ export class DatabasePage implements OnInit{
   add(){
 
     if(this.name != ''){
-      this.serverService.create(this.name).then(() => {
-        this.showRefreshData();
-      });
+      //this.serverService.create(this.name).then(() => {});
     }
   }
 
   delete(){
 
-      this.serverService.deleteElem(this.id).then(() => {
-        this.showRefreshData();
+      /* this.serverService.deleteElem(this.id).then(() => {
       },
       (err) => {
         this.wrongIdVisible = true;
-      });
+      }); */
   }
 
   closeAlert(){

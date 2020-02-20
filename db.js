@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 
 function createRouter(db) {
 
@@ -72,4 +71,5 @@ function createRouter(db) {
 
   return router;
 }
+
 module.exports = createRouter;

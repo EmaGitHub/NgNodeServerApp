@@ -41,4 +41,9 @@ export class ServerService {
     deleteElem(id: number) {
       return this.request('DELETE', environment.serverUrl+'/delete/'+id);
     } 
+
+    getCollection(): Promise<any>{
+
+      return this.request('GET', environment.serverUrl+'/testdb');
+    }
 }

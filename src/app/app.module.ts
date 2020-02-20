@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { HttpClientService } from './core/http-client.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DatabaseModule } from './database/database.module';
+import { DatabaseNoSqlModule } from './database-nosql/database-nosql.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { DatabaseModule } from './database/database.module';
     SharedModule,
     LoginModule,
     RootModule,
-    DatabaseModule
+    DatabaseModule,
+    DatabaseNoSqlModule
   ],
   providers: [HttpClientService],
   bootstrap: [AppComponent]

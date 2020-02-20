@@ -58,6 +58,11 @@ export class AppComponent {
     this.router.navigate(['/database', {}]);
   }
 
+  openDatabaseNoSqlPage(){
+    this.opened = false;
+    this.router.navigate(['/databaseNoSql', {}]);
+  }
+
   openRootPage(){
     this.opened = false;
     this.router.navigate(['/root', {}]);

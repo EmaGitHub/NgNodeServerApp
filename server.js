@@ -13,6 +13,7 @@ const path = require("path");
 
 const mysql = require("mysql");
 const db = require("./db");
+const dbNoSql = require("./noSqlDb")
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -22,7 +23,15 @@ const connection = mysql.createConnection({
 });
 
 
-//CONFIGURATION
+/* 
+    NOSQL
+    use testdb; db.testtable.insert({...})
+*/
+
+const MongoClient = require('mongodb').MongoClient;                     //MongoDB driver
+const url = 'mongodb://localhost/testdb';                               //DB Url to connect
+
+//EXPRESS CONFIGURATION
 
 const app = express();
     app.use(cors())
@@ -30,14 +39,23 @@ const app = express();
     app.use(bodyParser.json())
     app.use(db(connection));
 
-//CONNECTION TO DB    
+//CONNECTION TO DBs
 
-connection.connect(function(err) {
+connection.connect(function(err) {                                    //MYSQL
   if (err) {
     return console.error("error: " + err.message);
   }
   console.log("Connected to the MySQL server.");
 });
+
+MongoClient.connect(url, {                                             //MONGODB
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  })
+  .then(() => console.log('Connected to the MondoDB server.'))
+  .catch(err => {
+  console.log("DB Connection Error");
+  });
 
 
 // Declare static folder to be served. It contains the js, images, css, etc.
