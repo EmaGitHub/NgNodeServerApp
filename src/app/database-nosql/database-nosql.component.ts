@@ -25,6 +25,7 @@ export class DatabaseNoSqlPage implements OnInit{
     this.serverService.getCollection().then((data: any) => {
       this.databaseData = data;
       this.connected = true;
+      console.log("ON INIT ",data)
     });
   }
 
@@ -32,7 +33,7 @@ export class DatabaseNoSqlPage implements OnInit{
 
     if(this.tableVisible == false) this.tableVisible = true;
     if(!this.connected) this.databaseData = [{ "id" : 1, "name" : "first record" }, { "id" : 2, "name" : "second record" }, { "id" : 3, "name" : "third record" }];
-    else this.serverService.get().then((data: any) => {
+    else this.serverService.getCollection().then((data: any) => {
       this.databaseData = data;
     });
   }

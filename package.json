@@ -27,7 +27,7 @@
     "express": "^4.17.1",
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
-    "mongodb": "^3.5.3",
+    "mongoose": "^5.9.2",
     "mysql": "^2.18.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -34,9 +35,6 @@ export class ServerService {
 
       return this.request('POST', environment.serverUrl+'/add', data);
     }
-   /*  updateEvent(event) {
-      return this.request('PUT', `${environment.serverUrl}/test/${event.id}`, event);
-    }*/
 
     deleteElem(id: number) {
       return this.request('DELETE', environment.serverUrl+'/delete/'+id);
@@ -44,6 +42,6 @@ export class ServerService {
 
     getCollection(): Promise<any>{
 
-      return this.request('GET', environment.serverUrl+'/testdb');
+      return this.request('GET', environment.serverUrl+'/collection');
     }
 }
