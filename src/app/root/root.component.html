@@ -2,18 +2,17 @@
 
     <h1>Root Manager</h1>
 
-    <button class="filmsButton" (click)="getData()">Get Films</button>
-    <button class="filmsButton" (click)="refresh()">Refresh</button>
-    <button class="filmsButton" (click)="omdb()">OMDB Rate</button>
+    <div class="row tabs">
+        <div class="col-sm-12">
+            <ul class="nav nav-tabs">
+                <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="./">Base</a></li>
+                <li role="presentation" routerLinkActive="active"><a routerLink="./servers">Servers</a></li>
+                <li role="presentation" routerLinkActive="active"><a routerLink="./users">Users</a></li>
+            </ul>
+        </div>
+    </div>
 
-    <span *ngIf="indices">{{indices.length}} Films</span> 
-    
-    <br><br>
-
-    <p *ngFor="let film of films">{{film.name}} -> {{film.vote}}</p>
-
-
-    <h2 class="error">{{error}}</h2>
+    <router-outlet></router-outlet>
 
     <svg id="rocket-smoke" alt="Rocket Ship Smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632" viewBox="0 0 516.119 1083.632">
         <path id="Path_40" data-name="Path 40" d="M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z" transform="translate(-147.025 -140.939)" fill="#99e6ff"/>

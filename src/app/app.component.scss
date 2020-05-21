@@ -25,7 +25,9 @@
     }
   }
 
-.mat-sidenav-content { transition: 0.3s all }
+.mat-drawer {
+  top: 60px;
+}
 
 .toolbar img {
   margin: 0 16px;
@@ -33,16 +35,8 @@
 
 .sidenav{
 
-  background-color: gainsboro;
-
-  .tp-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #eee;
-  }
+  background-color: white;
+  border-right: 1px solid #1976d2;
   .tp-section {
     display: flex;
     align-content: center;

@@ -25,13 +25,13 @@ import { DatabaseNoSqlModule } from './database-nosql/database-nosql.module';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatGridListModule,
-    AppRoutingModule,
     HttpClientModule,
     SharedModule,
     LoginModule,
     RootModule,
     DatabaseModule,
-    DatabaseNoSqlModule
+    DatabaseNoSqlModule,
+    AppRoutingModule
   ],
   providers: [HttpClientService],
   bootstrap: [AppComponent]

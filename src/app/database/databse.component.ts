@@ -22,10 +22,10 @@ export class DatabasePage implements OnInit{
 
   ngOnInit(){
 
-    this.serverService.get().then((data: any) => {
+/*     this.serverService.get().then((data: any) => {
       this.databaseData = data;
       this.connected = true;
-    });
+    }); */
   }
 
   showRefreshData(){

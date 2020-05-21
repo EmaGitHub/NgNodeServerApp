@@ -37,6 +37,8 @@ export class AppComponent {
 
   title = 'Angular Server App';
   showLoginForm = 'false';
+
+  logged: boolean = false;
   
   name: string= '';
   password: string= '';
@@ -46,26 +48,11 @@ export class AppComponent {
 
   constructor(public router: Router){
 
-    router.navigate(['/login']);
+    if (!this.logged) router.navigate(['/login']);
   }
 
   showHideLoginForm(){
     this.showLoginForm == 'false' ? this.showLoginForm = 'true' : this.showLoginForm = 'false';
-  }
-
-  openDatabasePage(){
-    this.opened = false;
-    this.router.navigate(['/database', {}]);
-  }
-
-  openDatabaseNoSqlPage(){
-    this.opened = false;
-    this.router.navigate(['/databaseNoSql', {}]);
-  }
-
-  openRootPage(){
-    this.opened = false;
-    this.router.navigate(['/root', {}]);
   }
 
   openCloseMenu(){

@@ -22,11 +22,11 @@ export class DatabaseNoSqlPage implements OnInit{
 
   ngOnInit(){
 
-    this.serverService.getCollection().then((data: any) => {
+    /* this.serverService.getCollection().then((data: any) => {
       this.databaseData = data;
       this.connected = true;
       console.log("ON INIT ",data)
-    });
+    }); */
   }
 
   showRefreshData(){
